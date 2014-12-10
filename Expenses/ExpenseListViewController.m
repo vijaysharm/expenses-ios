@@ -27,14 +27,17 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - action delegate
-- (IBAction)addItem {
-    NSInteger newRowIndex = [self.items count];
-    [self.items addObject:[[ExpenseListItem alloc] initExpense:@"My second expense"]];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath]
-                          withRowAnimation:UITableViewRowAnimationAutomatic];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"EditExpense"]) {
+        UINavigationController *navigation = segue.destinationViewController;
+        ExpenseEditViewController *controller = (ExpenseEditViewController *)navigation.topViewController;
+        controller.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"ViewExpense"]) {
+       /*
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        controller.itemToEdit = _items[indexPath.row];
+        */
+    }
 }
 
 #pragma mark - table view delegate
@@ -62,6 +65,22 @@
     
     [tableView deleteRowsAtIndexPaths:@[indexPath]
                      withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+#pragma mark - ExpenseEditViewControllerDelegate delegate
+- (void)expenseEditViewController:(ExpenseEditViewController *)controller didFinishAddingItem:(ExpenseListItem *)expense {
+    NSInteger newRowIndex = [self.items count];
+    [self.items addObject:expense];
+
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)expenseEditViewControllerDidCancel:(ExpenseEditViewController *)controller {
+    [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

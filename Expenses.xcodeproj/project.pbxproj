@@ -18,6 +18,7 @@
 		422A9C821A37DA1500D271CF /* ExpensesAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 422A9C811A37DA1500D271CF /* ExpensesAssembly.m */; };
 		422A9C841A37DD4100D271CF /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422A9C831A37DD4100D271CF /* Configuration.plist */; };
 		422A9C871A38A48F00D271CF /* ExpenseListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 422A9C861A38A48F00D271CF /* ExpenseListItem.m */; };
+		422A9C8C1A38C88000D271CF /* ExpenseEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 422A9C8B1A38C88000D271CF /* ExpenseEditViewController.m */; };
 		C7FAC909454E0745CED6CF9F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91444C83CB74A4BFF90532B6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,8 @@
 		422A9C831A37DD4100D271CF /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		422A9C851A38A48F00D271CF /* ExpenseListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseListItem.h; sourceTree = "<group>"; };
 		422A9C861A38A48F00D271CF /* ExpenseListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseListItem.m; sourceTree = "<group>"; };
+		422A9C8A1A38C88000D271CF /* ExpenseEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseEditViewController.h; sourceTree = "<group>"; };
+		422A9C8B1A38C88000D271CF /* ExpenseEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseEditViewController.m; sourceTree = "<group>"; };
 		91444C83CB74A4BFF90532B6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,9 +151,9 @@
 		422A9C7D1A37D19800D271CF /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				422A9C891A38C82200D271CF /* Edit */,
+				422A9C881A38C81200D271CF /* List */,
 				421273681A37C95D00127499 /* LaunchScreen.xib */,
-				421273601A37C95D00127499 /* ExpenseListViewController.h */,
-				421273611A37C95D00127499 /* ExpenseListViewController.m */,
 				421273631A37C95D00127499 /* Main.storyboard */,
 			);
 			name = UserInterface;
@@ -172,6 +175,24 @@
 				422A9C861A38A48F00D271CF /* ExpenseListItem.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		422A9C881A38C81200D271CF /* List */ = {
+			isa = PBXGroup;
+			children = (
+				421273601A37C95D00127499 /* ExpenseListViewController.h */,
+				421273611A37C95D00127499 /* ExpenseListViewController.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		422A9C891A38C82200D271CF /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				422A9C8A1A38C88000D271CF /* ExpenseEditViewController.h */,
+				422A9C8B1A38C88000D271CF /* ExpenseEditViewController.m */,
+			);
+			name = Edit;
 			sourceTree = "<group>";
 		};
 		86E71329CC9C9BAD2D1F57E9 /* Pods */ = {
@@ -330,6 +351,7 @@
 				4212735C1A37C95D00127499 /* AppDelegate.m in Sources */,
 				422A9C871A38A48F00D271CF /* ExpenseListItem.m in Sources */,
 				4212735F1A37C95D00127499 /* Expenses.xcdatamodeld in Sources */,
+				422A9C8C1A38C88000D271CF /* ExpenseEditViewController.m in Sources */,
 				421273621A37C95D00127499 /* ExpenseListViewController.m in Sources */,
 				421273591A37C95D00127499 /* main.m in Sources */,
 				422A9C821A37DA1500D271CF /* ExpensesAssembly.m in Sources */,

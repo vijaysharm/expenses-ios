@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ExpenseEditViewController.h"
 
-@interface ExpenseListViewController : UITableViewController
-
-- (IBAction)addItem;
+@interface ExpenseListViewController : UITableViewController <ExpenseEditViewControllerDelegate>
 
 @end
 
