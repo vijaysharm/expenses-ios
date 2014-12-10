@@ -27,6 +27,12 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - action delegate
+- (IBAction)addItem {
+    
+}
+
+#pragma mark - table view delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.items.count;
 }

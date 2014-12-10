@@ -10,6 +10,7 @@
 
 @interface ExpenseListViewController : UITableViewController
 
+- (IBAction)addItem;
 
 @end
 
