@@ -14,6 +14,7 @@
 @protocol ExpenseEditViewControllerDelegate <NSObject>
 - (void)expenseEditViewControllerDidCancel:(ExpenseEditViewController*)controller;
 - (void)expenseEditViewController:(ExpenseEditViewController *)controller didFinishAddingItem:(ExpenseListItem *) expense;
+- (void)expenseEditViewController:(ExpenseEditViewController *)controller didFinishEditingItem:(ExpenseListItem *) expense;
 @end
 
 @interface ExpenseEditViewController : UITableViewController <UITextFieldDelegate>

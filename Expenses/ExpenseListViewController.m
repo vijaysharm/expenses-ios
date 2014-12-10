@@ -7,6 +7,8 @@
 //
 
 #import "ExpenseListViewController.h"
+#import "ExpenseEditViewController.h"
+#import "ExpenseDetailViewController.h"
 #import "ExpenseListItem.h"
 
 @interface ExpenseListViewController ()
@@ -28,15 +30,16 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"EditExpense"]) {
+    if ([segue.identifier isEqualToString:@"AddExpense"]) {
         UINavigationController *navigation = segue.destinationViewController;
         ExpenseEditViewController *controller = (ExpenseEditViewController *)navigation.topViewController;
         controller.delegate = self;
     } else if ([segue.identifier isEqualToString:@"ViewExpense"]) {
-       /*
+        UINavigationController *navigation = segue.destinationViewController;
+        ExpenseDetailViewController *controller = (ExpenseDetailViewController *)navigation.topViewController;
+
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        controller.itemToEdit = _items[indexPath.row];
-        */
+        controller.expense = [self.items objectAtIndex:indexPath.row];
     }
 }
 
@@ -77,6 +80,17 @@
                           withRowAnimation:UITableViewRowAnimationAutomatic];
     
     [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)expenseEditViewController:(ExpenseEditViewController *)controller didFinishEditingItem:(ExpenseListItem *)expense {
+/*
+     NSInteger index = [_items indexOfObject:item];
+     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index
+     inSection:0]; cellForRowAtIndexPath:indexPath];
+     UITableViewCell *cell = [self.tableView
+     [self configureTextForCell:cell withChecklistItem:item];
+     [self dismissViewControllerAnimated:YES completion:nil];
+*/
 }
 
 - (void)expenseEditViewControllerDidCancel:(ExpenseEditViewController *)controller {

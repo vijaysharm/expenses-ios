@@ -17,6 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (self.itemToEdit != nil) {
+        self.title = @"Edit Expense";
+        self.descriptionTextField.text = self.itemToEdit.expenseDescription;
+        self.doneBarButton.enabled = YES;
+    } else {
+        self.title = @"Add Expense";
+        self.descriptionTextField.text = @"";
+        self.doneBarButton.enabled = NO;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -30,8 +40,12 @@
 
 #pragma mark - Navigation ViewController actions
 - (IBAction)done {
-    ExpenseListItem *item = [[ExpenseListItem alloc] initExpense: self.descriptionTextField.text];
-    [self.delegate expenseEditViewController:self didFinishAddingItem:item];
+    if (self.itemToEdit == nil) {
+        ExpenseListItem *item = [[ExpenseListItem alloc] initExpense: self.descriptionTextField.text];
+        [self.delegate expenseEditViewController:self didFinishAddingItem:item];
+    } else {
+        // update the expense.
+    }
 }
 
 - (IBAction)cancel {

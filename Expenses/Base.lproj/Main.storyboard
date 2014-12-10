@@ -26,6 +26,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="yQs-W9-q7e" kind="show" identifier="ViewExpense" id="Wkd-NV-Hky"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -36,7 +39,7 @@
                     <navigationItem key="navigationItem" title="Expenses" id="Uw4-7H-IFN">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aDS-zd-5KH">
                             <connections>
-                                <segue destination="XzZ-B5-hTS" kind="presentation" identifier="EditExpense" id="NFy-RT-8MH"/>
+                                <segue destination="XzZ-B5-hTS" kind="presentation" identifier="AddExpense" id="NFy-RT-8MH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -101,6 +104,31 @@
             </objects>
             <point key="canvasLocation" x="2808" y="512"/>
         </scene>
+        <!--Expense-->
+        <scene sceneID="tJ9-qh-t0W">
+            <objects>
+                <viewController id="AXr-u7-UAh" customClass="ExpenseDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FVH-3l-Gal"/>
+                        <viewControllerLayoutGuide type="bottom" id="p6O-cU-IZB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HzL-wh-ru0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Expense" id="hoF-5P-0mG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="gkD-3i-9Gg">
+                            <connections>
+                                <segue destination="XzZ-B5-hTS" kind="presentation" identifier="EditExpense" id="leW-3h-asU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5fb-jn-jXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2056" y="1356"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="9d4-ZT-p06">
             <objects>
@@ -137,5 +165,26 @@
             </objects>
             <point key="canvasLocation" x="1996" y="512"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ycg-9H-XHG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yQs-W9-q7e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mmC-di-vQ9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AXr-u7-UAh" kind="relationship" relationship="rootViewController" id="MVK-3a-0pJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oya-8V-aVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1244" y="1356"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="leW-3h-asU"/>
+    </inferredMetricsTieBreakers>
 </document>
