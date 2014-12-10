@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C6E6D99F-6040-45CA-9461-2CF0D440228F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Expenses</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>41059ADE11622B26746BB414A718DF3AF085EF1C</key>
+		<string>github.com:vijaysharm/expenses-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Expenses.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>41059ADE11622B26746BB414A718DF3AF085EF1C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:vijaysharm/expenses-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>41059ADE11622B26746BB414A718DF3AF085EF1C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>41059ADE11622B26746BB414A718DF3AF085EF1C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>expenses-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
