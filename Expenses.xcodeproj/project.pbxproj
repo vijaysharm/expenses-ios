@@ -10,7 +10,7 @@
 		421273591A37C95D00127499 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 421273581A37C95D00127499 /* main.m */; };
 		4212735C1A37C95D00127499 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4212735B1A37C95D00127499 /* AppDelegate.m */; };
 		4212735F1A37C95D00127499 /* Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4212735D1A37C95D00127499 /* Expenses.xcdatamodeld */; };
-		421273621A37C95D00127499 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421273611A37C95D00127499 /* ViewController.m */; };
+		421273621A37C95D00127499 /* ExpenseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421273611A37C95D00127499 /* ExpenseListViewController.m */; };
 		421273651A37C95D00127499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421273631A37C95D00127499 /* Main.storyboard */; };
 		421273671A37C95D00127499 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 421273661A37C95D00127499 /* Images.xcassets */; };
 		4212736A1A37C95D00127499 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421273681A37C95D00127499 /* LaunchScreen.xib */; };
@@ -39,8 +39,8 @@
 		4212735A1A37C95D00127499 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4212735B1A37C95D00127499 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4212735E1A37C95D00127499 /* Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Expenses.xcdatamodel; sourceTree = "<group>"; };
-		421273601A37C95D00127499 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		421273611A37C95D00127499 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		421273601A37C95D00127499 /* ExpenseListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpenseListViewController.h; sourceTree = "<group>"; };
+		421273611A37C95D00127499 /* ExpenseListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExpenseListViewController.m; sourceTree = "<group>"; };
 		421273641A37C95D00127499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		421273661A37C95D00127499 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		421273691A37C95D00127499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -146,8 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				421273681A37C95D00127499 /* LaunchScreen.xib */,
-				421273601A37C95D00127499 /* ViewController.h */,
-				421273611A37C95D00127499 /* ViewController.m */,
+				421273601A37C95D00127499 /* ExpenseListViewController.h */,
+				421273611A37C95D00127499 /* ExpenseListViewController.m */,
 				421273631A37C95D00127499 /* Main.storyboard */,
 			);
 			name = UserInterface;
@@ -324,7 +324,7 @@
 			files = (
 				4212735C1A37C95D00127499 /* AppDelegate.m in Sources */,
 				4212735F1A37C95D00127499 /* Expenses.xcdatamodeld in Sources */,
-				421273621A37C95D00127499 /* ViewController.m in Sources */,
+				421273621A37C95D00127499 /* ExpenseListViewController.m in Sources */,
 				421273591A37C95D00127499 /* main.m in Sources */,
 				422A9C821A37DA1500D271CF /* ExpensesAssembly.m in Sources */,
 			);
