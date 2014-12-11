@@ -20,9 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.items = [[NSMutableArray alloc] initWithCapacity:20];
-    
-    [self.items addObject:[[ExpenseListItem alloc] initExpense:@"My first expense"]];
-    [self.items addObject:[[ExpenseListItem alloc] initExpense:@"My second expense"]];
+
+    [self addExpense:[[ExpenseListItem alloc] initExpense:@"1"
+                                          withDescription:@"My first expense"
+                                              withComment:@"comment"
+                                                 withDate:[NSDate date]
+                                               withAmount:@(1.20)]];
+
+    [self addExpense:[[ExpenseListItem alloc] initExpense:@"1"
+                                          withDescription:@"My second expense"
+                                              withComment:@"comment"
+                                                 withDate:[NSDate date]
+                                               withAmount:@(4.00)]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +49,7 @@
 
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         controller.expense = [self.items objectAtIndex:indexPath.row];
+        controller.delegate = self;
     }
 }
 
@@ -52,9 +62,7 @@
     ExpenseListItem *item = [self.items objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExpenseListItem"];
-    UILabel *label = (UILabel *)[cell viewWithTag:1000];
-    
-    label.text = item.expenseDescription;
+    [self configureCell:cell withExpense:item];
     
     return cell;
 }
@@ -73,7 +81,7 @@
 #pragma mark - ExpenseEditViewControllerDelegate delegate
 - (void)expenseEditViewController:(ExpenseEditViewController *)controller didFinishAddingItem:(ExpenseListItem *)expense {
     NSInteger newRowIndex = [self.items count];
-    [self.items addObject:expense];
+    [self addExpense:expense];
 
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath]
@@ -83,18 +91,45 @@
 }
 
 - (void)expenseEditViewController:(ExpenseEditViewController *)controller didFinishEditingItem:(ExpenseListItem *)expense {
-/*
-     NSInteger index = [_items indexOfObject:item];
-     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index
-     inSection:0]; cellForRowAtIndexPath:indexPath];
-     UITableViewCell *cell = [self.tableView
-     [self configureTextForCell:cell withChecklistItem:item];
-     [self dismissViewControllerAnimated:YES completion:nil];
-*/
+    NSInteger index = [self findExpenseIndex:expense.expenseId];
+    if (index >= 0) {
+        [self.items setObject:expense atIndexedSubscript:index];
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        [self configureCell:cell withExpense:expense];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)expenseEditViewControllerDidCancel:(ExpenseEditViewController *)controller {
     [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - private methods
+- (void)addExpense:(ExpenseListItem *)item {
+    static int expenseId = 1;
+    
+    item.expenseId = [NSString stringWithFormat:@"%i", expenseId];
+    [self.items addObject:item];
+
+    expenseId++;
+}
+
+- (NSInteger)findExpenseIndex:(NSString *)expenseId {
+    for (NSUInteger index = 0; index < self.items.count; index++) {
+        ExpenseListItem *expense = [self.items objectAtIndex:index];
+        if ([expense.expenseId isEqualToString:expenseId]) {
+            return index;
+        }
+    }
+    
+    return -1;
+}
+
+- (void)configureCell:(UITableViewCell *)cell withExpense:(ExpenseListItem*) item {
+    UILabel *label = (UILabel *)[cell viewWithTag:1000];
+    label.text = item.expenseDescription;
 }
 
 @end

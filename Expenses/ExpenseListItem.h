@@ -10,7 +10,16 @@
 
 @interface ExpenseListItem : NSObject
 
--(instancetype) initExpense:(NSString*)expenseDescription;
+-(instancetype) initExpense:(NSString *)expenseId
+            withDescription:(NSString *)description
+                withComment:(NSString *)comment
+                   withDate:(NSDate *)date
+                 withAmount:(NSNumber *)amount;
+
+@property(strong, nonatomic) NSString *expenseId;
 @property(strong, nonatomic, readonly) NSString *expenseDescription;
+@property(strong, nonatomic, readonly) NSString *expenseComment;
+@property(strong, nonatomic, readonly) NSDate *date;
+@property(strong, nonatomic, readonly) NSNumber *amount;
 
 @end

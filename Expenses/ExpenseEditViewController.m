@@ -41,10 +41,19 @@
 #pragma mark - Navigation ViewController actions
 - (IBAction)done {
     if (self.itemToEdit == nil) {
-        ExpenseListItem *item = [[ExpenseListItem alloc] initExpense: self.descriptionTextField.text];
+        ExpenseListItem *item = [[ExpenseListItem alloc] initExpense:@""
+                                                     withDescription:self.descriptionTextField.text
+                                                         withComment:@"comment"
+                                                            withDate:[NSDate date]
+                                                          withAmount:@(1.2)];
         [self.delegate expenseEditViewController:self didFinishAddingItem:item];
     } else {
-        // update the expense.
+        ExpenseListItem *item = [[ExpenseListItem alloc] initExpense:self.itemToEdit.expenseId
+                                                     withDescription:self.descriptionTextField.text
+                                                         withComment:@"comment"
+                                                            withDate:[NSDate date]
+                                                          withAmount:@(1.2)];
+        [self.delegate expenseEditViewController:self didFinishEditingItem:item];
     }
 }
 

@@ -12,5 +12,12 @@
 @class ExpenseListItem;
 
 @interface ExpenseDetailViewController : UIViewController <ExpenseEditViewControllerDelegate>
+
+@property (weak, nonatomic) id<ExpenseEditViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (strong, nonatomic) ExpenseListItem *expense;
+
 @end

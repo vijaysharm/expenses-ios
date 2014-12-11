@@ -22,6 +22,13 @@
     self.title = self.expense.expenseDescription;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+
+    [self updateView];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -30,7 +37,6 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
     if ([segue.identifier isEqualToString:@"EditExpense"]) {
         UINavigationController *navigation = segue.destinationViewController;
         ExpenseEditViewController *controller = (ExpenseEditViewController *)navigation.topViewController;
@@ -45,11 +51,33 @@
 }
 
 - (void)expenseEditViewController:(ExpenseEditViewController *)controller didFinishEditingItem:(ExpenseListItem *)expense {
-    [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    self.expense = expense;
+    [self updateView];
+    [self.delegate expenseEditViewController:controller didFinishEditingItem:expense];
 }
 
 - (void)expenseEditViewControllerDidCancel:(ExpenseEditViewController *)controller {
     [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - private methods
+- (void)updateView {
+    [ExpenseDetailViewController setText:self.expense.expenseDescription
+                                 onLabel:self.descriptionLabel];
+    
+    [ExpenseDetailViewController setText:self.expense.expenseComment
+                                 onLabel:self.commentLabel];
+    
+    [ExpenseDetailViewController setText:[NSString stringWithFormat:@"%@", self.expense.amount]
+                                 onLabel:self.amountLabel];
+    
+    [ExpenseDetailViewController setText:[NSDateFormatter localizedStringFromDate:self.expense.date dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle]
+                                 onLabel:self.dateLabel];
+}
+
++ (void)setText:(NSString*)text onLabel:(UILabel *)label {
+    label.text = text;
+    [label sizeToFit];
 }
 
 @end
