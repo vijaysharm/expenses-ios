@@ -12,4 +12,7 @@
 
 - (IBAction)didPressLogin;
 
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+
 @end

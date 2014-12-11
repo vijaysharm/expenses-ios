@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zak-Gg-oAe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Expenses-->
@@ -196,19 +197,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YIo-FR-vf1">
-                                <rect key="frame" x="16" y="20" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YIo-FR-vf1">
+                                <rect key="frame" x="16" y="20" width="568" height="48"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="7LF-Id-Fzg"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CXf-dj-I2o">
-                                <rect key="frame" x="16" y="58" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CXf-dj-I2o">
+                                <rect key="frame" x="16" y="76" width="568" height="48"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH5-Vy-F6m">
-                                <rect key="frame" x="41" y="96" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH5-Vy-F6m">
+                                <rect key="frame" x="16" y="132" width="568" height="48"/>
+                                <color key="backgroundColor" red="0.49406074014942214" green="0.79516103316326525" blue="0.21466832913503706" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="KbS-jJ-c60"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -216,9 +229,22 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="CXf-dj-I2o" firstAttribute="trailing" secondItem="Kz2-wL-CAI" secondAttribute="trailingMargin" id="2oH-8o-bhp"/>
+                            <constraint firstItem="CXf-dj-I2o" firstAttribute="top" secondItem="YIo-FR-vf1" secondAttribute="bottom" constant="8" id="6BM-JN-Mqp"/>
+                            <constraint firstItem="YIo-FR-vf1" firstAttribute="trailing" secondItem="Kz2-wL-CAI" secondAttribute="trailingMargin" id="Jfy-Ai-Oqh"/>
+                            <constraint firstItem="YIo-FR-vf1" firstAttribute="leading" secondItem="Kz2-wL-CAI" secondAttribute="leadingMargin" id="Jim-cS-gS8"/>
+                            <constraint firstItem="VH5-Vy-F6m" firstAttribute="top" secondItem="CXf-dj-I2o" secondAttribute="bottom" constant="8" id="KEO-KT-CrS"/>
+                            <constraint firstItem="VH5-Vy-F6m" firstAttribute="trailing" secondItem="Kz2-wL-CAI" secondAttribute="trailingMargin" id="LHW-Jv-SOe"/>
+                            <constraint firstItem="YIo-FR-vf1" firstAttribute="top" secondItem="y26-5s-4x5" secondAttribute="bottom" id="LWO-6s-LHc"/>
+                            <constraint firstItem="VH5-Vy-F6m" firstAttribute="leading" secondItem="Kz2-wL-CAI" secondAttribute="leadingMargin" id="oim-ei-wgI"/>
+                            <constraint firstItem="CXf-dj-I2o" firstAttribute="leading" secondItem="Kz2-wL-CAI" secondAttribute="leadingMargin" id="yKW-ud-gq1"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="passwordTextField" destination="CXf-dj-I2o" id="GAa-er-342"/>
+                        <outlet property="usernameTextField" destination="YIo-FR-vf1" id="1ze-DY-EAo"/>
                         <segue destination="FcZ-rL-3M5" kind="show" identifier="ViewExpenseList" id="faA-8g-cli"/>
                     </connections>
                 </viewController>
