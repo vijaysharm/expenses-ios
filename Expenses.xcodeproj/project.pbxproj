@@ -20,6 +20,7 @@
 		422A9C871A38A48F00D271CF /* ExpenseListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 422A9C861A38A48F00D271CF /* ExpenseListItem.m */; };
 		422A9C8C1A38C88000D271CF /* ExpenseEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 422A9C8B1A38C88000D271CF /* ExpenseEditViewController.m */; };
 		422A9C901A38F71300D271CF /* ExpenseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 422A9C8F1A38F71300D271CF /* ExpenseDetailViewController.m */; };
+		422A9C961A39FA9500D271CF /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 422A9C951A39FA9500D271CF /* LoginController.m */; };
 		C7FAC909454E0745CED6CF9F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91444C83CB74A4BFF90532B6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,8 @@
 		422A9C8B1A38C88000D271CF /* ExpenseEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseEditViewController.m; sourceTree = "<group>"; };
 		422A9C8E1A38F71300D271CF /* ExpenseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseDetailViewController.h; sourceTree = "<group>"; };
 		422A9C8F1A38F71300D271CF /* ExpenseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseDetailViewController.m; sourceTree = "<group>"; };
+		422A9C941A39FA9500D271CF /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		422A9C951A39FA9500D271CF /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		91444C83CB74A4BFF90532B6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +157,7 @@
 		422A9C7D1A37D19800D271CF /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
+				422A9C931A39FA6F00D271CF /* Login */,
 				422A9C8D1A38F6E500D271CF /* Detail */,
 				422A9C891A38C82200D271CF /* Edit */,
 				422A9C881A38C81200D271CF /* List */,
@@ -206,6 +210,15 @@
 				422A9C8F1A38F71300D271CF /* ExpenseDetailViewController.m */,
 			);
 			name = Detail;
+			sourceTree = "<group>";
+		};
+		422A9C931A39FA6F00D271CF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				422A9C941A39FA9500D271CF /* LoginController.h */,
+				422A9C951A39FA9500D271CF /* LoginController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		86E71329CC9C9BAD2D1F57E9 /* Pods */ = {
@@ -369,6 +382,7 @@
 				421273621A37C95D00127499 /* ExpenseListViewController.m in Sources */,
 				421273591A37C95D00127499 /* main.m in Sources */,
 				422A9C821A37DA1500D271CF /* ExpensesAssembly.m in Sources */,
+				422A9C961A39FA9500D271CF /* LoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
