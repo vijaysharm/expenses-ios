@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>service.url</key>
-	<string>NSURL(http://mobile-expenses.herokuapp.com/)</string>
+	<string>NSURL(http://mobile-expenses.herokuapp.com)</string>
 </dict>
 </plist>

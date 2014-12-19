@@ -7,7 +7,8 @@
 //
 
 #import "LoginController.h"
-#import "AppDelegate.h"
+#import "LoginResponse.h"
+#import "LoginRequest.h"
 
 @interface LoginController ()
 
@@ -30,7 +31,15 @@
 
 #pragma mark - view actions
 - (IBAction)didPressLogin {
-    [self performSegueWithIdentifier:@"ViewExpenseList" sender:self];
+    LoginRequest *request = [LoginRequest new];
+    request.username = @"vijay";
+    request.password = @"password";
+    
+    [self.operations login:request success:^(LoginResponse *response) {
+        NSLog(@"Successfully logged in");
+    } failure:^(NSError *error) {
+        NSLog(@"Failed to log in %@", error);
+    }];
 }
 
 @end

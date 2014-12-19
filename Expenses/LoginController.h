@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginOperation.h"
 
 @interface LoginController : UIViewController
 
@@ -14,5 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+
+@property (strong, nonatomic) id<LoginOperation> operations;
 
 @end
